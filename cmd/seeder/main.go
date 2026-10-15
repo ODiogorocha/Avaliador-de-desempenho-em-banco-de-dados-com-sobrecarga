@@ -15,7 +15,6 @@ func main() {
 	}
 	defer db.Close()
 
-	// DROP TABLE garante que a tabela é recriada e o auto-incremento zera (começa do 1)
 	_, err = db.Exec(`DROP TABLE IF EXISTS produtos;`)
 	if err != nil {
 		log.Fatalf("Erro ao dropar tabela: %v", err)
